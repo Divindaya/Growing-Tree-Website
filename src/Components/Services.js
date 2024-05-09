@@ -7,7 +7,7 @@ import afterschoolcare from '../Media/afterschoolcare.png';
 const Services = () => {
   return (
     <>
-    <div class="image-section">
+    <div className="image-section">
       </div>
     <section className='services' id='services'>
 
@@ -32,7 +32,7 @@ const Services = () => {
 
         <div className='box'>
           <img src={afterschoolcare} alt="after-school care" />
-          <h3>afterschool care</h3>
+          <h3>after school care</h3>
         </div>
 
       </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import contact from '../Media/Contactus.png';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
     const [name, setName] = useState('');
@@ -10,9 +11,17 @@ const Contact = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Handle the submission logic here, e.g., send data to an API
-        console.log(name, email, number, subject, message);
-    };
+        console.log(event);
+        emailjs.sendForm('your_service_id', 'your_template_id', event.target, 'your_user_id')
+          .then((result) => {
+              console.log(result.text);
+              alert('Email sent successfully!');
+          }, (error) => {
+              console.log(error.text);
+              alert('Failed to send email.');
+          });
+      };
+      
 
     return (
         <section className='contact' id='contact'>
@@ -42,6 +51,7 @@ const Contact = () => {
 
                 <div className='map-container'>
                     <iframe 
+                        title="google maps of growing tree kindergarten location"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1753.6513391155518!2d25.832999941867417!3d-24.867612594913204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ebca90015710a77%3A0x130cdf9a4c5aa23c!2sGrowing%20Tree%20Kindergarten!5e0!3m2!1sen!2sca!4v1715117615543!5m2!1sen!2sca" 
                         width="800" 
                         height="600" 
@@ -56,20 +66,20 @@ const Contact = () => {
 
             <div className='row'>
                 <div className='image'>
-                    <img src={contact} alt="A descriptive image" />
+                    <img src={contact} alt="helpful customer service lady" />
                 </div>
 
                 <form onSubmit={handleSubmit}>
                     <h3>get in touch</h3>
                     <div className='inputBox'>
                         <input type="text" placeholder="your name" value={name} onChange={e => setName(e.target.value)} />
-                        <input type="email" placeholder="your email" value={email} onChange={e => setEmail(e.target.value)} />
+                        <input type="email" placeholder="your email address" value={email} onChange={e => setEmail(e.target.value)} />
                     </div>
                     <div className='inputBox'>
-                        <input type="number" placeholder='your number' value={number} onChange={e => setNumber(e.target.value)} />
+                        <input type="tel" placeholder='your phone number' value={number} onChange={e => setNumber(e.target.value)} />
                         <input type="text" placeholder='your subject' value={subject} onChange={e => setSubject(e.target.value)} />
                     </div>
-                    <textarea placeholder='your message' cols={30} rows={10} value={message} onChange={e => setMessage(e.target.value)}></textarea>
+                    <textarea style={{ textTransform: "none" }} placeholder='your message' cols={30} rows={10} value={message} onChange={e => setMessage(e.target.value)}></textarea>
                     <input type='submit' value="send message" className='btn'/>
                 </form>
             </div>

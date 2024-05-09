@@ -14,7 +14,7 @@ const Footer = () => {
 
         <div className='box'>
           <h3>more pages coming soon!</h3>
-          <a>check back for more pages as we continue to work to expand our site</a>
+          <p>check back for more pages as we continue to work to expand our site</p>
         </div>
 {/*
         <div className='box'>
