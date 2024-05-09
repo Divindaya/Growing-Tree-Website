@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import contact from '../Media/Contactus.png';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+    const serviceId = process.env.REACT_APP_EMAIL_SERVICE_ID;
+    const templateId = process.env.REACT_APP_EMAIL_TEMPLATE_ID;
+    const publicKey = process.env.REACT_APP_EMAIL_PUBLIC_KEY;
+    const form = useRef();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [number, setNumber] = useState('');
@@ -12,7 +16,7 @@ const Contact = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(event);
-        emailjs.sendForm('your_service_id', 'your_template_id', event.target, 'your_user_id')
+        emailjs.sendForm(serviceId, templateId, form.current, { publicKey: publicKey})
           .then((result) => {
               console.log(result.text);
               alert('Email sent successfully!');
@@ -69,17 +73,17 @@ const Contact = () => {
                     <img src={contact} alt="helpful customer service lady" />
                 </div>
 
-                <form onSubmit={handleSubmit}>
+                <form ref={form} onSubmit={handleSubmit}>
                     <h3>get in touch</h3>
                     <div className='inputBox'>
-                        <input type="text" placeholder="your name" value={name} onChange={e => setName(e.target.value)} />
-                        <input type="email" placeholder="your email address" value={email} onChange={e => setEmail(e.target.value)} />
+                        <input type="text" placeholder="your name" name="name" value={name} onChange={e => setName(e.target.value)} />
+                        <input type="email" placeholder="your email address" name="email" value={email} onChange={e => setEmail(e.target.value)} />
                     </div>
                     <div className='inputBox'>
-                        <input type="tel" placeholder='your phone number' value={number} onChange={e => setNumber(e.target.value)} />
-                        <input type="text" placeholder='your subject' value={subject} onChange={e => setSubject(e.target.value)} />
+                        <input type="tel" placeholder='your phone number' name="number" value={number} onChange={e => setNumber(e.target.value)} />
+                        <input type="text" placeholder='your subject' name="subject" value={subject} onChange={e => setSubject(e.target.value)} />
                     </div>
-                    <textarea style={{ textTransform: "none" }} placeholder='your message' cols={30} rows={10} value={message} onChange={e => setMessage(e.target.value)}></textarea>
+                    <textarea style={{ textTransform: "none" }} placeholder='Your message' name="message" cols={30} rows={10} value={message} onChange={e => setMessage(e.target.value)}></textarea>
                     <input type='submit' value="send message" className='btn'/>
                 </form>
             </div>
