@@ -15,7 +15,6 @@ const Contact = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(event);
         emailjs.sendForm(serviceId, templateId, form.current, { publicKey: publicKey})
           .then((result) => {
               console.log(result.text);
