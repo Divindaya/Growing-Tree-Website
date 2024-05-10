@@ -11,7 +11,7 @@ const Services = () => {
       </div>
     <section className='services' id='services'>
 
-      <h1 className='heading'> our <span>services</span></h1>
+      <h1 className='heading'><span>services</span> we offer</h1>
 
       <div className='box-container'>
 
@@ -32,7 +32,7 @@ const Services = () => {
 
         <div className='box'>
           <img src={afterschoolcare} alt="after-school care" />
-          <h3>after school care</h3>
+          <h3>after-school care</h3>
         </div>
 
       </div>

@@ -278,6 +278,7 @@ section{
   line-height: 1.8;
   color: var(--white);
   padding: 1rem 2rem;
+  text-transform: none;
 }
 
 .education .box-container .box img{

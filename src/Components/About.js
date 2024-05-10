@@ -1,5 +1,5 @@
 import React from 'react';
-import playpen from '../Media/playpen.jpeg';
+import school from '../Media/schoolangled.jpeg';
 
 const About = () => {
   return (
@@ -14,7 +14,7 @@ const About = () => {
 
       <div className='row'>
         <div className='image'>
-          <img src={playpen} alt="" />
+          <img src={school} alt="front of main school building" />
         </div>
 
         <div className='content'>
