@@ -131,9 +131,9 @@ section{
   position: relative;
   color: var(--orange);
   background-image: url('Media/childish-background.jpg');
-  background-size: cover; /* Adjust size for each image */
-  background-position: center; /* Adjust position for each image */
-  background-repeat: no-repeat; /* Adjust repeating for each image */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .home .content{
@@ -379,7 +379,7 @@ section{
   position: relative; /* Positioning context for the overlay content */
   height: 100vh; /* Adjust height as needed */
   background-image: url('Media/collage.jpg'); /* Link to your image */
-  background-size: cover; /* Cover the entire area of the div */
+  background-size: 100%; /* Cover the entire area of the div */
   background-position: top; /* Center the background image */
   background-attachment: fixed; /* Key property: makes the background fixed during scroll */
   display: flex;
@@ -431,8 +431,10 @@ section{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   height: 100%;
 }
+
 .contact .icons-container{
   display: grid;
   grid-template-rows: repeat(3, minmax(20rem, auto));
@@ -478,6 +480,12 @@ section{
   align-items: center;
   padding: 20px;
   height: 100%;
+}
+
+.map-container iframe {
+  width: 80rem; /* Responsive width */
+  height: 60rem; /* Adjust height as needed */
+  border: 0;
 }
 
 .contact .row{
@@ -600,6 +608,26 @@ section{
 
 /* media query */
 
+@media (max-width:1024px){
+  .image-section{
+    height: 40vh;
+  }
+}
+
+@media (max-width:1024px) and (min-width:500px){
+
+  .contact .icons-container{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(30rem, 1fr));
+  }
+
+  .contact .icons-container .icons{
+    min-width: 25rem;
+  }
+}
+
 @media (max-width:991px){
 
   html{
@@ -644,6 +672,15 @@ section{
   .home .content h3{
     font-size: 4.5rem;
   }
+
+  .contact .icons-container .icons{
+    min-width: 20rem;
+  }
+
+
+  .image-section{
+    height: 27vh;
+  }
 }
 
 @media (max-width:450px){
@@ -653,5 +690,10 @@ section{
 
   .home .content h3{
     font-size: 3.5rem;
+  }
+  
+  .map-container iframe{
+    height: 60rem;
+    width: 40rem;
   }
 }

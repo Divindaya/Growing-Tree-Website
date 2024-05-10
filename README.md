@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Growing Tree Kindergarten Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Growing Tree is a kindergarten located in Ramotswa, Botswana and offers early education and child services for children aged 10 months to 5 years. This website showcases the lively, colourful, and supportive environment your child would be exposed to if they attended our facilities.
 
 ## Available Scripts
 

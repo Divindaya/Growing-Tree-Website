@@ -34,8 +34,9 @@ const Contact = () => {
                 <div className='icons-container'>
                     <div className='icons'>
                         <i className='fas fa-clock'></i>
-                        <h3>opening hours :</h3>
-                        <p>mon - fri: 06:00 am to 05:00 pm</p>
+                        <h3>opening hours</h3>
+                        <p>mon - fri</p>
+                        <p>06:00 am to 05:00 pm</p>
                     </div>
 
                     <div className='icons'>
@@ -56,9 +57,6 @@ const Contact = () => {
                     <iframe 
                         title="google maps of growing tree kindergarten location"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1753.6513391155518!2d25.832999941867417!3d-24.867612594913204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ebca90015710a77%3A0x130cdf9a4c5aa23c!2sGrowing%20Tree%20Kindergarten!5e0!3m2!1sen!2sca!4v1715117615543!5m2!1sen!2sca" 
-                        width="800" 
-                        height="600" 
-                        style={{ border:0 }}
                         allowFullScreen="" 
                         loading="lazy" 
                         referrerPolicy="no-referrer-when-downgrade">
