@@ -31,6 +31,7 @@ const Header = () => {
 
     return (
         <header className="header">
+            {/* eslint-disable-next-line */}
             <a href="#" className="logo">
               <img src={logo} alt="logo" />
               Growing Tree Kindergarten
