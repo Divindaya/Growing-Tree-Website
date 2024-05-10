@@ -33,8 +33,8 @@ const Header = () => {
         <header className="header">
             {/* eslint-disable-next-line */}
             <a href="#" className="logo">
-              <img src={logo} alt="logo" />
-              Growing Tree Kindergarten
+              <div className=''><img src={logo} alt="logo" /></div>
+              <div className='title'>Growing Tree Kindergarten</div>
             </a>
             <nav className={`navbar ${isNavbarActive ? 'active' : ''}`}>
                 <a href="#about" className={activeSection === 'about' ? 'active' : ''} >About</a>
