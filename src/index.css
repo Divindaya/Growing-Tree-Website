@@ -686,17 +686,6 @@ section{
     font-size: 4.5rem;
   }
 
-  .custom-shape-divider-bottom-1714611753 {
-    position: absolute; /* Change from absolute to relative for proper stacking */
-    margin-top: 1rem; /* Adjust the margin as needed */
-    bottom: -13rem;
-  }
-
-  .custom-shape-divider-bottom-1714611753 svg {
-    width: 100%; /* Adjust the SVG to fit the screen */
-    height: 8rem; /* Adjust the height as necessary */
-  }
-
   .contact .icons-container .icons{
     min-width: 20rem;
   }
