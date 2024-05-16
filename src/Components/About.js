@@ -1,5 +1,5 @@
 import React from 'react';
-import school from '../Media/schoolangled.jpeg';
+import school from '../Media/schoolangled.jpg';
 
 const About = () => {
   return (
