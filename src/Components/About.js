@@ -1,5 +1,5 @@
 import React from 'react';
-import school from '../Media/afterschoolcare.png';
+import school from '../Media/schoolangled.jpeg';
 
 const About = () => {
   return (
